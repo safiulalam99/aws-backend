@@ -55,6 +55,32 @@ flowchart LR
 - Docker containerization
 - Infrastructure as Code using AWS CDK
 
+## Quick Test
+The service is currently running and available for testing. Try these commands:
+
+1. Store a log:
+   ```bash
+   curl -X POST \
+        -H "Content-Type: application/json" \
+        -d '{"message": "Hello from Safiul"}' \
+        http://3.84.151.213:3000/log
+   ```
+
+2. Retrieve all logs:
+   ```bash
+   curl http://3.84.151.213:3000/log
+   ```
+
+3. Try storing custom JSON data:
+   ```bash
+   curl -X POST \
+        -H "Content-Type: application/json" \
+        -d '{"test": "custom data", "timestamp": "2024-03-21"}' \
+        http://3.84.151.213:3000/log
+   ```
+
+Feel free to experiment with different JSON payloads in the POST request!
+
 ## Local Development
 1. Set environment variables in `.env`
 2. `npm install` in backend directory
